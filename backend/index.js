@@ -12,10 +12,6 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('MongoDB 연결 성공');
-
-    app.listen(PORT, () => {
-      console.log(`서버 실행 중: http://localhost:${PORT}`);
-    });
   })
   .catch(err => console.log(err));
 
@@ -50,3 +46,7 @@ app.delete('/api/todos/:id', async (req, res) => {
   await Todo.findByIdAndDelete(req.params.id);
   res.json({ message: '삭제 완료' });
 });
+
+
+// Vercel serverless function export
+module.exports = app;
