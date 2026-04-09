@@ -22,5 +22,6 @@
       "src": "/(.*)",
       "dest": "/frontend-react/dist/$1"
     }
-  ]
+  ],
+  "outputDirectory": "frontend-react/dist"
 }
